@@ -1,5 +1,6 @@
 import fr.lacombe.cartbnp.Cart;
 import fr.lacombe.cartbnp.Product;
+import fr.lacombe.cartbnp.ProductNotFoundInCart;
 import org.assertj.core.api.Assertions;
 import org.junit.Test;
 
@@ -33,6 +34,15 @@ public class ShoppingCartShouldTest {
         cart.add(new Product("vase"));
         cart.remove("vase");
         Assertions.assertThat(cart.getAllProducts()).hasSize(2);
+    }
+
+    @Test(expected = ProductNotFoundInCart.class)
+    public void givenMultipleProductsDeleteNonExistentProduct_UnchangedCartAndErrorMessage() throws Exception {
+        Cart cart = new Cart();
+        cart.add(new Product("chair"));
+        cart.add(new Product("table"));
+        cart.add(new Product("vase"));
+        cart.remove("shelf");
     }
 
 

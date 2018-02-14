@@ -23,6 +23,7 @@ public class Cart {
     public void remove(String name) {
         Optional<Product> result = products.stream().filter(p -> p.getName() == name).findFirst();
         result.ifPresent(product -> products.remove(product));
+        result.orElseThrow(() -> new ProductNotFoundInCart());
 
     }
 }
