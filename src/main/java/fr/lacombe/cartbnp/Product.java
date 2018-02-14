@@ -2,12 +2,23 @@ package fr.lacombe.cartbnp;
 
 public class Product {
     private final String name;
+    private double price;
 
     public Product(String name) {
-        this.name=name;
+        this.name = name;
+    }
+
+    public Product(String name, double price) {
+        this(name);
+
+        this.price = price;
     }
 
     public String getName() {
         return name;
+    }
+
+    public double getPrice() {
+        return price;
     }
 }

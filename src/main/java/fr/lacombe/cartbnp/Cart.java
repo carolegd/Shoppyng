@@ -28,6 +28,9 @@ public class Cart {
     }
 
     public double totalPrice() {
-        return 0.0;
+        if (products.isEmpty()) return 0.0;
+        return products.stream()
+                .map(Product::getPrice)
+                .reduce(0.0, (a,b)->(a+b));
     }
 }
