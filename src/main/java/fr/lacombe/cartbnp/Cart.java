@@ -19,9 +19,11 @@ public class Cart {
     }
 
     public void remove(String name) {
-        Optional<Product> result = products.stream().filter(p -> Objects.equals(p.getName(), name)).findFirst();
-        result.ifPresent(products::remove);
-        result.orElseThrow(ProductNotFoundInCart::new);
+        Product result = products.stream()
+                .filter(p -> Objects.equals(p.getName(), name))
+                .findFirst()
+                .orElseThrow(ProductNotFoundInCart::new);
+        products.remove(result);
 
     }
 
