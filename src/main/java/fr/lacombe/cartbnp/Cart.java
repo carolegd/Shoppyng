@@ -1,8 +1,9 @@
 package fr.lacombe.cartbnp;
 
 import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
 import java.util.Optional;
+import java.util.Set;
 
 public class Cart {
 
@@ -12,8 +13,8 @@ public class Cart {
         products = new ArrayList<>();
     }
 
-    public List<Product> getAllProducts() {
-        return products;
+    public Set<Product> getAllProducts() {
+        return new HashSet<>(products);
     }
 
     public void add(Product product) {

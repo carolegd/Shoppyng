@@ -27,5 +27,15 @@ public class ShoppingCartGetPriceTest {
         Assertions.assertThat(cart.totalPrice()).isEqualTo(14.35+80.0+30.40+100.55);
     }
 
+    @Test
+    public void givenDuplicateProductsInCart_CartPriceIsSumOfProductPrices() throws Exception {
+        Cart cart = new Cart();
+        cart.add(new Product("book", 14.35));
+        cart.add(new Product("book", 14.35));
+        cart.add(new Product("book", 14.35));
+        cart.add(new Product("book", 14.35));
+        Assertions.assertThat(cart.totalPrice()).isEqualTo(14.35*4);
+    }
+
 
 }

@@ -45,4 +45,13 @@ public class ShoppingCartShouldTest {
         cart.remove("shelf");
     }
 
+    @Test
+    public void givenDuplicateProductsInCart_ProductAppearOnlyOnce() throws Exception {
+        Cart cart = new Cart();
+        cart.add(new Product("chair"));
+        cart.add(new Product("table"));
+        cart.add(new Product("table"));
+        cart.add(new Product("table"));
+        Assertions.assertThat(cart.getAllProducts()).hasSize(2);
+    }
 }
