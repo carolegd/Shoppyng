@@ -5,16 +5,13 @@ import fr.lacombe.cartbnp.Product;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Set;
-
 @RestController
-public class CartController {
+class CartController {
     @RequestMapping("/cart")
     public CartDto getCart() {
 
         Cart cart = getCurrentCart();
-        CartDto cartDto = CartDto.mapper(cart);
-        return  cartDto;
+        return CartDto.mapper(cart);
     }
 
     private Cart getCurrentCart() {
