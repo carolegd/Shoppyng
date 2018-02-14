@@ -45,5 +45,4 @@ public class ShoppingCartShouldTest {
         cart.remove("shelf");
     }
 
-
 }

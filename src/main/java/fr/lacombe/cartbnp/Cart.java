@@ -26,4 +26,8 @@ public class Cart {
         result.orElseThrow(() -> new ProductNotFoundInCart());
 
     }
+
+    public double totalPrice() {
+        return 0.0;
+    }
 }
