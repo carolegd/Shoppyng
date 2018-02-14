@@ -4,18 +4,26 @@ import fr.lacombe.cartbnp.ProductNotFoundInCart;
 import org.assertj.core.api.Assertions;
 import org.junit.Test;
 
+import java.util.Set;
+
 public class ShoppingCartShouldTest {
     @Test
     public void givenNoProductAdded_EmptyCart() throws Exception {
         Cart cart = new Cart();
-        Assertions.assertThat(cart.getAllProducts()).isEmpty();
+
+        Set<Product> allProducts = cart.getAllProducts();
+
+        Assertions.assertThat(allProducts).isEmpty();
     }
 
     @Test
     public void givenEmptyCartProductAdded_CartWithProduct() throws Exception {
         Cart cart = new Cart();
         cart.add(new Product("chair"));
-        Assertions.assertThat(cart.getAllProducts()).hasSize(1);
+
+        Set<Product> allProducts = cart.getAllProducts();
+
+        Assertions.assertThat(allProducts).hasSize(1);
     }
 
     @Test
@@ -23,7 +31,11 @@ public class ShoppingCartShouldTest {
         Cart cart = new Cart();
         cart.add(new Product("chair"));
         cart.add(new Product("table"));
-        Assertions.assertThat(cart.getAllProducts()).hasSize(2);
+
+
+        Set<Product> allProducts = cart.getAllProducts();
+
+        Assertions.assertThat(allProducts).hasSize(2);
     }
 
     @Test
@@ -32,7 +44,9 @@ public class ShoppingCartShouldTest {
         cart.add(new Product("chair"));
         cart.add(new Product("table"));
         cart.add(new Product("vase"));
+
         cart.remove(new String("vase"));
+
         Assertions.assertThat(cart.getAllProducts()).hasSize(2);
     }
 
@@ -42,7 +56,9 @@ public class ShoppingCartShouldTest {
         cart.add(new Product("chair"));
         cart.add(new Product("table"));
         cart.add(new Product("vase"));
+
         cart.remove("shelf");
+
     }
 
     @Test
@@ -52,6 +68,9 @@ public class ShoppingCartShouldTest {
         cart.add(new Product("table"));
         cart.add(new Product("table"));
         cart.add(new Product("table"));
-        Assertions.assertThat(cart.getAllProducts()).hasSize(2);
+
+        Set<Product> allProducts = cart.getAllProducts();
+        
+        Assertions.assertThat(allProducts).hasSize(2);
     }
 }
