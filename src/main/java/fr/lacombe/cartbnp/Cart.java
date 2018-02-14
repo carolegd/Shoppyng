@@ -1,9 +1,6 @@
 package fr.lacombe.cartbnp;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Optional;
-import java.util.Set;
+import java.util.*;
 
 public class Cart {
 
@@ -22,9 +19,9 @@ public class Cart {
     }
 
     public void remove(String name) {
-        Optional<Product> result = products.stream().filter(p -> p.getName() == name).findFirst();
-        result.ifPresent(product -> products.remove(product));
-        result.orElseThrow(() -> new ProductNotFoundInCart());
+        Optional<Product> result = products.stream().filter(p -> Objects.equals(p.getName(), name)).findFirst();
+        result.ifPresent(products::remove);
+        result.orElseThrow(ProductNotFoundInCart::new);
 
     }
 

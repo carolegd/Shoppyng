@@ -32,7 +32,7 @@ public class ShoppingCartShouldTest {
         cart.add(new Product("chair"));
         cart.add(new Product("table"));
         cart.add(new Product("vase"));
-        cart.remove("vase");
+        cart.remove(new String("vase"));
         Assertions.assertThat(cart.getAllProducts()).hasSize(2);
     }
 
