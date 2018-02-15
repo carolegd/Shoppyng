@@ -1,4 +1,4 @@
-package fr.lacombe.cartbnp.Domain;
+package fr.lacombe.cartbnp.domain;
 
 import java.util.Objects;
 

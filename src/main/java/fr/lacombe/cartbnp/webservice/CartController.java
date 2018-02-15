@@ -1,10 +1,10 @@
 package fr.lacombe.cartbnp.webservice;
 
-import fr.lacombe.cartbnp.Domain.Cart;
+import fr.lacombe.cartbnp.domain.Cart;
+import fr.lacombe.cartbnp.service.CartService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import fr.lacombe.cartbnp.service.CartService;
 
 @RestController
 public class CartController {

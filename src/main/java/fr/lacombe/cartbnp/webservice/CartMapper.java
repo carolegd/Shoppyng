@@ -1,6 +1,6 @@
 package fr.lacombe.cartbnp.webservice;
 
-import fr.lacombe.cartbnp.Domain.Cart;
+import fr.lacombe.cartbnp.domain.Cart;
 
 import java.util.stream.Collectors;
 

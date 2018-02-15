@@ -1,5 +1,5 @@
-import fr.lacombe.cartbnp.Domain.Cart;
-import fr.lacombe.cartbnp.Domain.Product;
+import fr.lacombe.cartbnp.domain.Cart;
+import fr.lacombe.cartbnp.domain.Product;
 import org.assertj.core.api.Assertions;
 import org.junit.Test;
 
