@@ -1,4 +1,4 @@
-package webservice;
+package fr.lacombe.cartbnp.webservice;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -23,9 +23,14 @@ public class CartControllerTest {
     @Autowired
     private MockMvc mockMvc;
 
-    @Test
-
+    /*@Test
     public void cartRequestShouldReturnTotalPrice() throws Exception {
+        this.mockMvc.perform(get("/cart")).andDo(print()).andExpect(status().isOk())
+                .andExpect(jsonPath("$.totalPrice").value(976.8));
+    }*/
+    @Test
+    public void rename() throws Exception {
+        CartController cartController = new CartController();
         this.mockMvc.perform(get("/cart")).andDo(print()).andExpect(status().isOk())
                 .andExpect(jsonPath("$.totalPrice").value(976.8));
     }

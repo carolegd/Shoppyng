@@ -1,4 +1,4 @@
-package fr.lacombe.cartbnp;
+package fr.lacombe.cartbnp.Domain;
 
 public class ProductNotFoundInCart extends RuntimeException
 {

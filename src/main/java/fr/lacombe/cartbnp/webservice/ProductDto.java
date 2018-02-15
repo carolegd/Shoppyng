@@ -1,6 +1,6 @@
-package webservice;
+package fr.lacombe.cartbnp.webservice;
 
-import fr.lacombe.cartbnp.Product;
+import fr.lacombe.cartbnp.Domain.Product;
 
 public class ProductDto {
     private final String name;
